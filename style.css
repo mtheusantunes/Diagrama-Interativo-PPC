@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    background-color: #56026d;
+}
+
+.board {
+    display: flex;
+}
+
+.materias {
+    /*space settings*/
+    box-sizing: border-box;
+    width: 160px;
+    height: 110px;
+    border-radius: 10px;
+    border: 4px solid;
+    margin: 20px;
+    padding: 10px;
+
+    /*display setting*/
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    /*color settings*/
+    color: white;
+    background-color: black;
+    border-color: #b300e4;
+
+    /*Font settings*/
+    font-family: "Open Sans";
+    font-weight: bold;
+    text-align: center;
+}
+
+.primeiroPeriodo {
+    display: flex;
+    flex-direction: column;
+}
+
+.segundoPeriodo {
+    display: flex;
+    flex-direction: column;
+}
+
+.fio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: white;
+    stroke-width: 2px;
+}
