@@ -11,8 +11,8 @@ body {
 .materias {
     /*space settings*/
     box-sizing: border-box;
-    width: 160px;
-    height: 110px;
+    width: 170px;
+    height: 120px;
     border-radius: 10px;
     border: 4px solid;
     margin: 20px;
@@ -34,12 +34,7 @@ body {
     text-align: center;
 }
 
-.primeiroPeriodo {
-    display: flex;
-    flex-direction: column;
-}
-
-.segundoPeriodo {
+.periodo {
     display: flex;
     flex-direction: column;
 }
