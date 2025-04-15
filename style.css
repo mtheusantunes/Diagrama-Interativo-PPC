@@ -4,8 +4,36 @@ body {
     background-color: #56026d;
 }
 
+.head {
+    display: flex;
+    width: max-content;
+}
+
+.title {
+    box-sizing: border-box;
+    width: 170px;
+    border: 4px solid;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 0px;
+
+    display: flex;
+    justify-content: center;
+
+    color: white;
+    background-color: #3a0249;
+    border-color: #8a03af;
+    
+    font-size: 20px;
+}
+
 .board {
     display: flex;
+}
+
+.periodo {
+    display: flex;
+    flex-direction: column;
 }
 
 .materias {
@@ -32,11 +60,6 @@ body {
     font-family: "Open Sans";
     font-weight: bold;
     text-align: center;
-}
-
-.periodo {
-    display: flex;
-    flex-direction: column;
 }
 
 .fio {
