@@ -1,42 +1,67 @@
 function encontraDisciplinasSeguintes() {
-    var disciplinasIDs = [
+    const disciplinasIDs = [
         'icc', 'calculoI', 'gaal', 'inglesI',
         'algProgramacao', 'calculoVV', 'algLinearComputacional',
-        'inglesII', 'sistemasDigitais', 'matDiscreta', 'aeds', 'arquiteturaII'
+        'inglesII', 'sistemasDigitais', 'matDiscreta', 'aeds', 'fisicaModerna',
+        'metodologiaCient', 'arquiteturaI', 'introducaoTeoriaGrafos',
+        'tecnicasBuscaOrdenacao', 'uceI', 'probEstatistica', 'arquiteturaII',
+        'poo', 'organizacaoSistemasArquivos', 'pesquisaOperacional',
+        'engenhariaSoftware', 'sistemasOperacionais', 'desenvolvimentoWeb',
+        'projetoAnaliseAlg', 'bancoDados', 'uceII', 'paradigmasProgramacao',
+        'algoritmosGrafos', 'gerenciamentoAplicacoesBD', 'computacaoGrafica',
+        'sistemasDistribuidos', 'redesComputadores', 'linguagensFormaisAutomatos',
+        'complexidadeProblemasAproximacao', 'introducaoIA', 'gerenciaProjetos',
+        'compiladores', 'optativaI', 'informaticaEticaSociedade', 'empreendedorismo',
+        'projetoEstagioConclusaoCurso', 'optativaII', 'UCEIII'
     ];
 
-    var disciplinas = disciplinasIDs.map(pos => document.getElementById(pos));
+    const disciplinas = disciplinasIDs.map(pos => document.getElementById(pos));
+    const disciplinasLigadas = [
+        { requisitos: [0], libera: 4 },
+        { requisitos: [1], libera: 5 },
+        { requisitos: [2], libera: 6 },
+        { requisitos: [3], libera: 7 },
+        { requisitos: [4], libera: 10 },
+        { requisitos: [5], libera: 17 },
+        { requisitos: [6], libera: 31 },
+        { requisitos: [8], libera: 13 },
+        { requisitos: [9], libera: 14 },
+        { requisitos: [9, 15], libera: 25 },
+        { requisitos: [9, 25], libera: 29 },
+        { requisitos: [10], libera: 15 },
+        { requisitos: [10], libera: 26 },
+        { requisitos: [10], libera: 36 }
 
-    for (let pos = 0; pos < disciplinas.length; pos++) {
-        disciplinas[pos].addEventListener('click', () => {
+    ];
 
-            disciplinas[pos].classList.toggle('selecionada');
-            if (disciplinas[pos].classList.contains('liberada')) {
-                disciplinas[pos].classList.toggle('liberada');
-            }
-            libera(disciplinas, [0], 4);
-            libera(disciplinas, [1], 5);
-            libera(disciplinas, [2], 6);
-            libera(disciplinas, [3], 7);
-            libera(disciplinas, [4, 8], 10);
+    const semRequisitos = [8, 9];
+
+    disciplinas.forEach((disciplina, i) => {
+
+        disciplina.addEventListener('click', () => {
+
+            disciplina.classList.toggle('selecionada');
+            disciplina.classList.remove('liberada');
+
+            disciplinasLigadas.forEach(({ requisitos, libera }) => {
+
+                const todasSelecionadas = requisitos.every(index => disciplinas[index].classList.contains('selecionada'));
+                const aindaNaoSelecionada = !disciplinas[libera].classList.contains('selecionada');
+
+                if (todasSelecionadas && aindaNaoSelecionada) {
+                    disciplinas[libera].classList.add('liberada');
+                } else if (!todasSelecionadas) {
+                    disciplinas[libera].classList.remove('liberada');
+                }
+            });
+
+            semRequisitos.forEach(discSemRequisito => {
+                if (!disciplinas[discSemRequisito].classList.contains('selecionada')) {
+                    disciplinas[discSemRequisito].classList.add('liberada');
+                }
+            });
         });
-    }
-}
-
-function libera(disciplinas, requisito, liberada) {
-    for (let countReq = 0; countReq < requisito.length; countReq++) {
-        if (disciplinas[requisito[countReq]].classList.contains('selecionada')) {
-            if (!(disciplinas[liberada].classList.contains('liberada')) &&
-                !(disciplinas[liberada].classList.contains('selecionada'))) {
-                disciplinas[liberada].classList.toggle('liberada');
-            }
-        } else if (!(disciplinas[requisito[countReq]].classList.contains('selecionada'))) {
-            disciplinas[liberada].classList.toggle('liberada', false);
-            break;
-        }
-    }
+    });
 }
 
 window.onload = encontraDisciplinasSeguintes;
-document.getElementById('sistemasDigitais').classList.toggle('liberada');
-document.getElementById('matDiscreta').classList.toggle('liberada');
