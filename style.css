@@ -36,7 +36,7 @@ body {
     flex-direction: column;
 }
 
-.materias {
+.disciplinas {
     /*space settings*/
     box-sizing: border-box;
     width: 170px;
@@ -60,6 +60,14 @@ body {
     font-family: "Open Sans";
     font-weight: bold;
     text-align: center;
+}
+
+.disciplinas.selecionada {
+    background-color: #72b6dd;
+}
+
+.disciplinas.liberada {
+    background-color: #7ed957;
 }
 
 .fio {
