@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-    background-color: #56026d;
-    color-scheme: light;
+    background-color: #43047a;
+    color-scheme: dark;
 }
 
-.container{
+.container {
     display: grid;
     overflow-x: auto;
 }
@@ -34,9 +34,9 @@ body {
     justify-content: center;
 
     color: rgb(232, 217, 235);
-    background-color: #3a0249;
-    border-color: #8a03af;
-    
+    background-color: #2e0354;
+    border-color: #54039c;
+
     font-family: "Open Sans";
     font-weight: bold;
 
@@ -67,7 +67,7 @@ body {
     /*color settings*/
     color: white;
     background-color: black;
-    border-color: #b300e4;
+    border-color: #8800ff;
 
     /*Font settings*/
     font-family: "Open Sans";
@@ -80,18 +80,18 @@ body {
 }
 
 .disciplinas.selecionada {
-    background-color: #72b6dd;
+    background-color: #88c0e1;
 }
 
 .disciplinas.liberada {
-    background-color: #7ed957;
+    background-color: #9ae57b;
 }
 
 .disciplinas.faltando {
-    background-color: #8d0000;
+    background-color: #a01313;
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px) {
     .disciplinas {
         width: 28vw;
         min-width: 100px;
@@ -99,6 +99,7 @@ body {
         min-height: 80px;
         font-size: clamp(0.5rem, 2.5vw, 1rem);
     }
+
     .title {
         width: 28vw;
         min-width: 100px;
