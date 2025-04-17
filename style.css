@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;900&display=swap');
 
 body {
     background-color: #43047a;
@@ -25,9 +25,9 @@ body {
 
 .title {
     box-sizing: border-box;
-    width: 10vw;
+    width: 8.6vw;
     max-width: 160px;
-    min-width: 120px;
+    min-width: 110px;
     border: 4px solid;
     border-radius: 10px;
     margin: 1rem auto;
@@ -40,7 +40,7 @@ body {
     border-color: #54039c;
 
     font-family: "Open Sans";
-    font-weight: bold;
+    font-weight: bolder;
     font-size: clamp(0.5vw, 1rem, 1vw);
 
     user-select: none;
@@ -55,9 +55,9 @@ body {
 .disciplinas {
     /*space settings*/
     box-sizing: border-box;
-    width: 10vw;
+    width: 8.6vw;
     max-width: 160px;
-    min-width: 120px;
+    min-width: 110px;
     height: 6.5vw;
     max-height: 120px;
     min-height: 90px;
@@ -77,9 +77,9 @@ body {
 
     /*Font settings*/
     font-family: "Open Sans";
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
-    font-size: clamp(0.5vw, 0.9rem, 1vw);
+    font-size: clamp(0.5vw, 1rem, 0.8vw);
 
     cursor: pointer;
     user-select: none;
