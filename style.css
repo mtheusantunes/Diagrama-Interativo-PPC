@@ -20,11 +20,14 @@ body {
     display: flex;
     justify-content: center;
 
-    color: white;
+    color: rgb(232, 217, 235);
     background-color: #3a0249;
     border-color: #8a03af;
     
-    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: bold;
+
+    user-select: none;
 }
 
 .board {
@@ -60,6 +63,9 @@ body {
     font-family: "Open Sans";
     font-weight: bold;
     text-align: center;
+
+    cursor: pointer;
+    user-select: none;
 }
 
 .disciplinas.selecionada {
@@ -68,6 +74,10 @@ body {
 
 .disciplinas.liberada {
     background-color: #7ed957;
+}
+
+.disciplinas.faltando {
+    background-color: #8d0000;
 }
 
 .fio {
