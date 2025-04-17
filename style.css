@@ -4,18 +4,30 @@ body {
     background-color: #56026d;
 }
 
+.container{
+    display: grid;
+    overflow-x: auto;
+}
+
 .head {
     display: flex;
     width: max-content;
+    gap: 1rem;
+    margin: auto;
+}
+
+.board {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem auto;
 }
 
 .title {
     box-sizing: border-box;
-    width: 170px;
+    width: 160px;
     border: 4px solid;
     border-radius: 10px;
-    margin: 20px;
-    margin-bottom: 0px;
+    margin: 1rem auto;
 
     display: flex;
     justify-content: center;
@@ -30,27 +42,24 @@ body {
     user-select: none;
 }
 
-.board {
-    display: flex;
-}
-
 .periodo {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 .disciplinas {
     /*space settings*/
     box-sizing: border-box;
-    width: 170px;
+    width: 160px;
+    min-width: 150px;
     height: 120px;
     border-radius: 10px;
     border: 4px solid;
-    margin: 20px;
     padding: 10px;
 
     /*display setting*/
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -63,6 +72,7 @@ body {
     font-family: "Open Sans";
     font-weight: bold;
     text-align: center;
+    font-size: 1rem;
 
     cursor: pointer;
     user-select: none;
@@ -80,12 +90,17 @@ body {
     background-color: #8d0000;
 }
 
-.fio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    stroke: white;
-    stroke-width: 2px;
+@media(max-width: 600px){
+    .disciplinas {
+        width: 28vw;
+        min-width: 100px;
+        height: 22vw;
+        min-height: 80px;
+        font-size: clamp(0.5rem, 2.5vw, 1rem);
+    }
+    .title {
+        width: 28vw;
+        min-width: 100px;
+        font-size: clamp(0.5rem, 2.5vw, 1rem);
+    }
 }
