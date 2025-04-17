@@ -100,15 +100,18 @@ body {
 @media(max-width: 600px) {
     .disciplinas {
         width: 28vw;
-        min-width: 100px;
-        height: 22vw;
-        min-height: 80px;
-        font-size: clamp(0.5rem, 2.5vw, 1rem);
+        min-width: 110px;
+        max-width: 146px;
+        height: 21vw;
+        min-height: 110px;
+        max-height: 112px;
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
     }
 
     .title {
         width: 28vw;
-        min-width: 100px;
-        font-size: clamp(0.5rem, 2.5vw, 1rem);
+        min-width: 110px;
+        max-width: 146px;
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
     }
 }
