@@ -101,7 +101,7 @@ function encontraDisciplinasAnteriores() {
 
             if (!estaSelecionada(disciplinas[i])) {
                 todasNaoSelecionadas.forEach((index) => {
-                    disciplinas[index].classList.toggle('faltando');
+                    disciplinas[index].classList.add('faltando');
                 });
             }
         });
