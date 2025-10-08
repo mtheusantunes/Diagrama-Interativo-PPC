@@ -27,4 +27,10 @@ sem frameworks, visando leveza e fácil integração com outras plataformas.
 
 ## 🚀 Como usar
 
-1. Acesse: https://matheusantunesf.github.io/Diagrama-Interativo-PPC/
+1. Acesse: mtheusantunes.github.io/Diagrama-Interativo-PPC/
+2. Clique em uma disciplina para marca-la como concluída;
+3. Coloque o mouse sobre uma disciplina não concluída ou não disponível
+   para visualizar seus pré requisitos;
+5. As disciplinas em verde são as que você já pode fazer;
+6. As disciplinas em azul são as que você já fez;
+7. As disciplinas em vermelho são os pré requisitos da disciplina;
