@@ -27,7 +27,7 @@ sem frameworks, visando leveza e fácil integração com outras plataformas.
 
 ## 🚀 Como usar
 
-1. Acesse: mtheusantunes.github.io/Diagrama-Interativo-PPC/
+1. Acesse: https://mtheusantunes.github.io/Diagrama-Interativo-PPC/
 2. Clique em uma disciplina para marca-la como concluída;
 3. Coloque o mouse sobre uma disciplina não concluída ou não disponível
    para visualizar seus pré requisitos;
