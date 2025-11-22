@@ -11,7 +11,7 @@ const disciplinasIDs = [
     'administracao', 'optativaIII',
 ];
 
-const disciplinas = disciplinasIDs.map(pos => document.getElementById(pos));
+let disciplinas = [];
 
 const regras = [
     { requisitos: [0], libera: 4 },
@@ -24,13 +24,16 @@ const regras = [
     { requisitos: [7], libera: 12 },
     { requisitos: [8], libera: 13 },
     { requisitos: [8, 14], libera: 24 },
+    { requisitos: [8], libera: 34 },
     { requisitos: [9], libera: 14 },
     { requisitos: [9], libera: 25 },
+    { requisitos: [9], libera: 27 },
     { requisitos: [9], libera: 35 },
     { requisitos: [9, 17, 34], libera: 37 },
     { requisitos: [9], libera: 18 },
     { requisitos: [9], libera: 19 },
     { requisitos: [12], libera: 17 },
+    { requisitos: [12], libera: 22 },
     { requisitos: [13, 24], libera: 28 },
     { requisitos: [18], libera: 21 },
     { requisitos: [18], libera: 23 },
@@ -105,6 +108,7 @@ function encontraDisciplinasAnteriores() {
 }
 
 window.onload = () => {
+    disciplinas = disciplinasIDs.map(pos => document.getElementById(pos));
     encontraDisciplinasSeguintes();
     encontraDisciplinasAnteriores();
 } 
