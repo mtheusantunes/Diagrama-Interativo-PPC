@@ -3,4 +3,13 @@
 
 @theme {
     --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+    --primary-color: #4d179a;
+}
+
+@utility custom-scroll {
+    scrollbar-color: white var(--primary-color);
+}
+
+@utility scrollbar-thin {
+    scrollbar-width: thin;
 }
