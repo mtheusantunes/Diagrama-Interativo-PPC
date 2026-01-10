@@ -6,6 +6,16 @@ import { COURSE_STATUS } from "./constants/COURSE_STATUS";
 
 function App() {
   const [semesters, setSemesters] = useState(SEMESTER_LIST);
+  const courses = semesters.flatMap((s) => s.courses);
+
+  const doneIds = new Set(
+    courses.filter((c) => c.status === COURSE_STATUS.DONE).map((c) => c.id)
+  );
+
+  const isAvailable = (course) => {
+    if (!course.prerequisites?.length) return true;
+    return course.prerequisites.every((id) => doneIds.has(id));
+  };
 
   function onCourseClick(courseId) {
     setSemesters((prevSemesters) =>
@@ -13,9 +23,11 @@ function App() {
         ...semester,
         courses: semester.courses.map((course) =>
           course.id === courseId
-            ? { ...course, status: COURSE_STATUS.DONE }
+            ? course.status === COURSE_STATUS.DONE
+              ? { ...course, status: COURSE_STATUS.UNDONE }
+              : { ...course, status: COURSE_STATUS.DONE }
             : course
-        )
+        ),
       }))
     );
   }
@@ -27,16 +39,14 @@ function App() {
       </h1>
       <div className="grid overflow-x-auto scrollbar-gutter-stable custom-scroll md:scrollbar-thin">
         <div className="flex gap-4 my-2 mx-auto">
-          <Semester semester={semesters.find((s) => s.id === 1)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 2)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 3)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 4)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 5)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 6)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 7)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 8)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 9)} onCourseClick={onCourseClick}/>
-          <Semester semester={semesters.find((s) => s.id === 10)} onCourseClick={onCourseClick}/>
+          {semesters.map((semester) => (
+            <Semester
+              key={semester.id}
+              semester={semester}
+              onCourseClick={onCourseClick}
+              isAvailable={isAvailable}
+            />
+          ))}
         </div>
       </div>
     </div>
